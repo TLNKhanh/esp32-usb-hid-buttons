@@ -1,10 +1,10 @@
 # ESP32-S3 USB HID Button Keyboard
-
-Simple project using ESP32-S3 to send keyboard input (arrow keys + 'e') through USB when buttons are pressed.
+A simple and beginner-friendly project to get started with USB HID and keystrokes using ESP32-S3.
 
 ## 🧠 Features
-- Press physical buttons → send arrow key (↑ ↓ ← →) or "e"
-- Uses USB HID (no extra driver needed)
+- Press physical buttons → send arrow keys ↑ ↓ ← → (or remap to W A S D)
+- Sends a lowercase `e` on button press (with debounce delay)
+- USB HID (no extra driver needed)
 - Built with Arduino framework
 
 ## 🛠️ Hardware Used
@@ -13,6 +13,10 @@ Simple project using ESP32-S3 to send keyboard input (arrow keys + 'e') through 
 - Jumper wires + breadboard
 
 ## 📷 Wiring
+- Follow this table or customize in the code  
+- Connect one side of each button to GND  
+- All buttons use `INPUT_PULLUP`
+
 | Button | GPIO Pin |
 |--------|----------|
 | UP     | 5        |
@@ -21,22 +25,15 @@ Simple project using ESP32-S3 to send keyboard input (arrow keys + 'e') through 
 | RIGHT  | 6        |
 | E      | 14       |
 
-(use INPUT_PULLUP)
-
 ## 🧪 How It Works
-- Hold a button → sends and holds the key
-- Release button → releases the key
-- Press 'E' button → types lowercase `e` every time (with delay to avoid spam)
+- The ESP32-S3 reads the state of each button
+- If pressed, it sends the mapped keyboard key over USB HID
+- Real-time sync between physical button and PC key state
+- 'E' button acts like a short tap key (auto-release after 500ms)
 
-## 🧵 Code
-Code is in `main.ino` (or whatever you name it).  
-Flash using Arduino IDE with ESP32 board manager installed.
+## 💾 Code
+File: `esp32-usb-hid-buttons.ino`  
+Flash with Arduino IDE using ESP32 board manager + proper USB settings.
 
-## 📸 Demo
-*Insert image or gif here if u got one*
-
-## 💬 Author
-Made by [Your Name or GitHub handle]
-
----
-> Started at 13. Watch me go full beast mode by 18 🔥
+## 📸 Schematic
+![Connect like below](Schematic.png)
