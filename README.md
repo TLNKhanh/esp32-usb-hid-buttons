@@ -1,4 +1,4 @@
-# ESP32-S3 USB HID Button Keyboard
+# ESP32-S3 USB HID Button Keyboard with Arduino
 A simple and beginner-friendly project to get started with USB HID and keystrokes using ESP32-S3.
 
 ## 🧠 Features
