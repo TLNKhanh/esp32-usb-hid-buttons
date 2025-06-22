@@ -1,7 +1,6 @@
 // Include necessary libraries
 #include "USB.h"
 #include "USBHIDKeyboard.h"
-
 // Uncomment below to use WASD control instead of arrow keys
 //#define USE_WASD
 
